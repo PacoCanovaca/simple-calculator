@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root {
+    --spacing: 20px;
+    --small-spacing: 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    padding: 30px;
+    background: linear-gradient(270deg, #BFFCC6, #FFFFD1, #FFCBC1);
+}
+
+main {
+    margin: auto;
+    margin-top: 50px;
+    padding: var(--spacing);
+    background-color: #ffffff7c;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing);
+    box-shadow: 0 0 25px #0000003a;
+    border-radius: 20px;
+}
+
+.screen {
+    width: 100%;
+    box-shadow: 0 0 25px #0000003a;
+    text-align: right;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+}
+
+.screen > p {
+    font-size: 4rem;
+    padding: var(--small-spacing) var(--spacing);
+}
+
+.buttons {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 95px);
+    grid-template-rows: repeat(5, 70px);
+    justify-content: center;
+    gap: var(--spacing);
+}
+
+
+.buttons > .calc-button {
+    border: none;
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.75rem;
+    box-shadow: 0 0 25px #0000003a;
+}
+
+.buttons > .operators {
+    background-color: #ff4621;
+    color: #FFFFFF;
+}
+
+.buttons > .equal {
+    background-color: #4fb35a;
+    color: #FFFFFF;
+}
+
+.buttons > .double {
+    grid-column: 1/3;
+}
+
+.buttons > .triple {
+    grid-column: 1/4;
+}
