@@ -13,13 +13,12 @@
 
 body {
     font-family: "Roboto", sans-serif;
-    padding: 30px;
+    padding: 50px;
     background: linear-gradient(270deg, #BFFCC6, #FFFFD1, #FFCBC1);
 }
 
 main {
     margin: auto;
-    margin-top: 50px;
     padding: var(--spacing);
     background-color: #ffffff7c;
     display: flex;
@@ -92,4 +91,71 @@ main {
 
 .buttons > .triple {
     grid-column: 1/4;
+}
+
+@media (max-width: 768px) {
+    main {
+    max-width: calc(500px * 0.75);
+    box-shadow: 0 0 20px #0000003a;
+    border-radius: 15px;
+}
+
+.screen {
+    box-shadow: 0 0 20px #0000003a;
+    border-radius: 12px;
+}
+
+.screen > p {
+    font-size: calc(4rem * 0.75);
+    height: calc(100px * 0.75);
+}
+
+.buttons {
+    grid-template-columns: repeat(4, calc(95px * 0.75));
+    grid-template-rows: repeat(5, calc(70px * 0.75));
+    gap: calc(var(--spacing) * 0.75);
+}
+
+
+.buttons > .calc-button {
+    border-radius: 12px;
+    font-size: calc(1.75rem * 0.75);
+    box-shadow: 0 0 15px #0000003a;
+}
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 30px;
+    }
+
+    main {
+        padding: 15px;
+    max-width: calc(500px * 0.5);
+    box-shadow: 0 0 15px #0000003a;
+    border-radius: 10px;
+}
+
+.screen {
+    box-shadow: 0 0 15px #0000003a;
+    border-radius: 8px;
+}
+
+.screen > p {
+    font-size: calc(4rem * 0.4);
+    height: calc(100px * 0.5);
+}
+
+.buttons {
+    grid-template-columns: repeat(4, calc(95px * 0.5));
+    grid-template-rows: repeat(5, calc(70px * 0.5));
+    gap: calc(var(--spacing) * 0.5);
+}
+
+
+.buttons > .calc-button {
+    border-radius: 8px;
+    font-size: calc(1.75rem * 0.5);
+    box-shadow: 0 0 15px #0000003a;
+}
 }
