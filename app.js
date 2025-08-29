@@ -47,10 +47,25 @@ const solveOperation = () => {
     } else if (operator === "×") {
       result = firstNumber * secondNumber;
     } else if (operator === "÷") {
-      result = firstNumber / secondNumber;
+      if (secondNumber !== 0) {
+        result = firstNumber / secondNumber;
+      }
     }
-    screen.innerText = String(result);
-    firstNumber = result;
+    if (String(result).includes(".")) {
+      const resultList = String(result).split("");
+      while (resultList.length > 12) {
+        resultList.pop();
+      }
+      result = resultList.join("");
+      screen.innerText = result;
+    } else {
+      if (String(result).length > 12) {
+        result = "Error";
+      }
+      screen.innerText = String(result);
+    }
+
+    firstNumber = parseFloat(result);
     secondNumber = 0;
   });
 };
@@ -69,7 +84,6 @@ const deleteOne = () => {
   const deleteOneButton = document.querySelector("#delete");
   deleteOneButton.addEventListener("click", () => {
     const screenList = screen.innerText.split("");
-    const lastNum = screenList[screenList.length - 1];
     screenList.pop();
     screen.innerText = screenList.join("");
   });
